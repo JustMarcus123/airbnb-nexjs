@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
   secondaryAction,
   secondaryActionLabel,
 }) => {
-  const [shwModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(isOpen);
 
   useEffect(() => {
     setShowModal(isOpen);
@@ -56,6 +56,7 @@ const Modal: React.FC<ModalProps> = ({
     if (disable || !secondaryAction) {
       return;
     }
+    secondaryAction();
   }, [disable, secondaryAction]);
 
   if (!isOpen) {
@@ -94,8 +95,8 @@ const Modal: React.FC<ModalProps> = ({
             className={`translate
                 duration-300
                 h-full
-                ${shwModal ? "translate-y-0" : "translate-y-full"}
-                ${shwModal ? "opacity-100" : "opacity-0"}
+                ${showModal ? "translate-y-0" : "translate-y-full"}
+                ${showModal ? "opacity-100" : "opacity-0"}
                 `}
           >
             <div

@@ -29,7 +29,7 @@ const RegisterModal = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
-        axios.post('api/register', data)
+        axios.post('/api/register', data)
             .then(() => {
                 registerModal.onClose();
             })
@@ -43,7 +43,7 @@ const RegisterModal = () => {
 
     const bodyContent =(
          <div className="flex flex-col gap-4">
-         <Heading title='Welcome to Zion Bakewee'
+         <Heading title='Welcome to Airbnb'
           subtitle='Please Create an account'
         //   center
           />
